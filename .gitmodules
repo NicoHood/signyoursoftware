@@ -1,0 +1,12 @@
+[submodule "plugins/error"]
+	path = plugins/error
+	url = https://github.com/getgrav/grav-plugin-error.git
+	branch = master
+[submodule "plugins/markdown-notices"]
+	path = plugins/markdown-notices
+	url = https://github.com/getgrav/grav-plugin-markdown-notices.git
+	branch = master
+[submodule "plugins/problems"]
+	path = plugins/problems
+	url = https://github.com/getgrav/grav-plugin-problems.git
+	branch = master
