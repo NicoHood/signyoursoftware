@@ -1,0 +1,32 @@
+name: Signyoursoftware
+slug: signyoursoftware
+type: theme
+version: 0.1.0
+description: Theme for signyoursoftware.com
+icon: rebel
+author:
+  name: NicoHood
+  email: signyoursoftware@nicohood.de
+homepage: https://github.com/NicoHood/grav-theme-signyoursoftware
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/NicoHood/grav-theme-signyoursoftware/issues
+readme: https://github.com/NicoHood/grav-theme-signyoursoftware/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
