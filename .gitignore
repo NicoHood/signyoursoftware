@@ -1,0 +1,6 @@
+config/security.yaml
+*/config/security.yaml
+data/*
+!data/.*
+accounts/*
+!accounts/.*

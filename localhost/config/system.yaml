@@ -1,0 +1,33 @@
+# Disable all browser cache
+pages:
+  expires: 0
+  cache_control: 'no-store, no-cache, must-revalidate'
+  etag: false
+
+errors:
+  display: true
+  log: true
+
+debugger:
+  enabled: true
+  twig: true
+  censored: false
+  shutdown:
+    close_connection: false
+
+cache:
+  enabled: false
+  check:
+    method: file
+
+twig:
+  cache: false
+  debug: true
+  auto_reload: true
+
+session:
+  secure: false
+
+assets:
+  css_pipeline: false
+  js_pipeline: false

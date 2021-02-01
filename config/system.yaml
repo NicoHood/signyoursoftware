@@ -1,0 +1,78 @@
+absolute_urls: false
+
+home:
+  alias: '/home'
+
+pages:
+  theme: signyoursoftware
+  markdown:
+    extra: false
+  process:
+    markdown: true
+    twig: false
+
+  # Use etag for caching
+  expires: 0
+  cache_control: 'private, max-age=0, must-revalidate'
+  last_modified: true
+  etag: true
+
+cache:
+  enabled: true
+  check:
+    # Speed up cache by disabling cache checking
+    method: none
+  driver: auto
+  prefix: 'g'
+  gzip: true
+
+twig:
+  cache: true
+  # Disable debug and auto_reload in production mode for some speed gains
+  debug: false
+  auto_reload: false
+  autoescape: true
+
+assets:
+  css_pipeline: true
+  css_minify: true
+  css_rewrite: true
+  js_pipeline: true
+  js_minify: true
+
+errors:
+  display: false
+  log: true
+
+debugger:
+  enabled: false
+  twig: false
+  censored: true
+  shutdown:
+    close_connection: true
+
+session:
+  enabled: true
+  secure: true
+
+gpm:
+  releases: stable
+  verify_peer: true
+
+languages:
+  translations: true
+  http_accept_language: true
+  include_default_lang: false
+  default_lang: de
+  include_default_lang_file_extension: true
+  supported:
+    - de
+    - en
+  content_fallback:
+    de: [en]
+
+# Disable any legacy compatibility modes
+strict_mode:
+  twig_compat: false
+  yaml_compat: false
+  blueprint_compat: false
