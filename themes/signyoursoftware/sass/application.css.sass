@@ -1,0 +1,92 @@
+@import "variables"
+@import "layout"
+@import "anchors"
+@import "sections"
+
+html
+  font: 16px/1.4 $base-font-family
+  color: #342828
+  background-color: $color-sand
+
+a
+  color: $color-ocre
+  text-decoration: none
+
+a:hover
+  text-decoration: underline
+
+h1
+  color: $color-ocre
+  font-size: 3.2em
+  font-weight: bold
+  font-family: $base-font-family
+  margin-bottom: 0
+  line-height: 1
+  text-transform: lowercase
+
+h2
+  font-size: 1.2em
+  margin-top: 0.2em
+  margin-bottom: 2em
+
+h1, h2
+  text-align: left
+
+h3
+  font-size: 1.3em
+  font-family: $base-font-family
+  margin-bottom: 1em
+  position: relative
+  padding-left: .1em
+
+h3:hover .anchor, h3:focus .anchor
+  display: block
+
+h3 ~ p
+  margin-top: 0
+
+h1, h2, h3
+  margin-top: 0
+  padding-top: 1em
+
+header
+  .locales, .mark
+    margin-bottom: -2em
+    margin-top: 2em
+    margin-right: 2em
+
+  .mark
+    margin-left: 3em
+    float: left
+
+#footer
+  line-height: 2.2
+
+  .mark
+    float: left
+    width: 30px
+    height: 30px
+
+  p
+    text-align: center
+    margin-top: 0
+
+.locales
+  float: right
+
+.locales li
+  float: right
+  font-size: 0.7em
+  display: inline
+  list-style-type: none
+  white-space: nowrap
+
+pre, code
+  background-color: $color-light-sand
+  font-family: $source-code-font-family
+code
+  white-space: nowrap
+
+@media (min-width: 1077px)
+  h1
+    width: 50%
