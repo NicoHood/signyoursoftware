@@ -61,13 +61,14 @@ gpm:
 
 languages:
   translations: true
-  http_accept_language: true
+  # TODO disabled because of https://github.com/getgrav/grav/issues/3200
+  http_accept_language: false
   include_default_lang: false
-  default_lang: de
+  default_lang: en
   include_default_lang_file_extension: true
   supported:
-    - de
     - en
+    - de
   content_fallback:
     de: [en]
 
