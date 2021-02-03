@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     paragraphs = [];
     paragraphs.push(lastParagraph);
 
-    while (lastParagraph.nextElementSibling && lastParagraph.nextElementSibling.tagName == "P") {
+    while (lastParagraph.nextElementSibling && (lastParagraph.nextElementSibling.tagName == "P" || lastParagraph.nextElementSibling.tagName == "UL")) {
       lastParagraph = lastParagraph.nextElementSibling;
       paragraphs.push(lastParagraph)
     }

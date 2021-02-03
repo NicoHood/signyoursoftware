@@ -85,7 +85,11 @@ div.frequently-asked-questions h4.is-visible:after { content: "-"; }
 
 div.frequently-asked-questions h4 ~ p { display: none; font-size: 0.9em; }
 
+div.frequently-asked-questions h4 ~ ul { display: none; font-size: 0.9em; }
+
 div.frequently-asked-questions h4 ~ p.is-visible { display: inherit; }
+
+div.frequently-asked-questions h4 ~ ul.is-visible { display: inherit; }
 
 #footer { font-size: .6em; font-weight: normal; border-top: 1px solid #e9e6e1; padding-top: 1em; padding-left: 2em; padding-right: 2em; background-color: #E05735; color: #FEECD3; }
 
