@@ -9,18 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
+    {# TODO Open Graph #}
+
+    {# TODO improve https://wiki.selfhtml.org/wiki/Grafik/Favicon #}
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png')|e }}" />
-    <link rel="canonical" href="{{ page.url(true, true)|e }}" />
+    {# TODO This is wrong for the website root: https://github.com/getgrav/grav/issues/3127 #}
+    <link rel="canonical" href="{{ page.canonical(true) }}" />
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
-    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
-    {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Muli:400,700', 100) %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700', 100) %}
+    {% do assets.addCss('theme://css/normalize.css', 99) %}
+    {% do assets.addCss('theme://css-compiled/application.min.css', 98) %}
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.addJs('jquery', 100) %}
+    {# {% do assets.addJs('jquery', 100) %} #}
+    {% do assets.addJs('theme://js/site.js') %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -30,8 +36,27 @@
 </head>
 <body id="top" class="{{ page.header.body_classes|e }}">
 
+<article>
+
 {% block header %}
-    <div class="header">
+    <header role="banner">
+        {# TODO <%= image_tag "keep-a-changelog-mark.svg", width: 100, class: "mark" %> #}
+      <nav class="locales" role="navigation">
+        <select>
+        {# TODO translations #}
+          {# <% $languages.each do |language| %>
+            <% selected = language_code == language.first %>
+            <% if available_translation = available_translation_for(language) %>
+              <option label="<%= available_translation %>" selected="<%= selected %>" value="<%= language.first %>">
+                <%= available_translation %>
+              </option>
+            <% end %>
+          <% end %> #}
+        </select>
+          {# TODO github image + link #}
+      </nav>
+    </header>
+    {# <div class="header">
         <div class="wrapper padding">
             <a class="logo left" href="{{ home_url|e }}">
                 <i class="fa fa-rebel"></i>
@@ -43,24 +68,48 @@
             </nav>
             {% endblock %}
         </div>
-    </div>
+    </div> #}
 {% endblock %}
 
 {% block body %}
-    <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
+<div class="main" role="main">
+  {# <% if !latest_version && legacy_version %>
+    <% if versions.include?($last_version) %>
+      <p class="newer">
+        <% if $languages[language_code][:new] %>
+          <%= "#{$languages[language_code][:new]}: " %>
+        <% else %>
+          There is a newer version available:
+        <% end %>
+        <%= link_to "#{$languages[language_code][:name]} #{$last_version}", "/#{language_code}/#{$last_version}" %>
+      </p>
+    <% else %>
+      <% if $languages[language_code][:notice] %>
+        <p class="last-version-notice">
+          <%= $languages[language_code][:notice] %>
+        </p>
+      <% else %>
+        <p class="last-version-notice">
+          The latest version (#{$last_version}) is not yet available in
+          this language but
+          <%= link_to "you can read it in English", "/en/#{$last_version}" %>
+          for now and
+          <%= link_to "help translate ", "https://github.com/nicohood/sign-your-software/issues" %>
+          it.
+        </p>
+      <% end %>
+    <% end %>
+  <% end %> #}
+  {% block content %}{% endblock %}
+
+  </div>
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
-        </div>
-    </div>
+    {% include 'partials/footer.html.twig' %}
 {% endblock %}
+
+</article>
 
 {% block bottom %}
     {{ assets.js('bottom')|raw }}

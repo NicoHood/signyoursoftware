@@ -1,0 +1,8 @@
+{% set footer_page = page.find('/modules/footer') %}
+{% set footer_content = footer_page.content %}
+{% set footer_image = media[theme_var('footer_image')] %}
+
+<footer id="footer" class="{{ footer_page.header.class }}" role="contentinfo">
+    {{ footer_image.html(null, null, 'mark')|raw }}
+    {{ footer_content|raw }}
+</footer>
