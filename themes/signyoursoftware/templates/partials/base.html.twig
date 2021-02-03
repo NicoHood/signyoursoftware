@@ -40,7 +40,9 @@
 
 {% block header %}
     <header role="banner">
-        {# TODO <%= image_tag "keep-a-changelog-mark.svg", width: 100, class: "mark" %> #}
+      {% set header_image = media[theme_var('header_image')] %}
+      {{ header_image.derivatives([100, 200, 300]).sizes('100px').html(null, null, 'mark')|raw }}
+
       <nav class="locales" role="navigation">
         <select>
         {# TODO translations #}

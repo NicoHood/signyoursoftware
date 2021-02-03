@@ -117,7 +117,7 @@ h1, h2, h3 { margin-top: 0; padding-top: 1em; }
 
 header .locales, header .mark { margin-bottom: -2em; margin-top: 2em; margin-right: 2em; }
 
-header .mark { margin-left: 3em; float: left; }
+header .mark { margin-left: 3em; float: left; width: 100px; height: 100px; }
 
 #footer { line-height: 2.2; }
 
