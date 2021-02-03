@@ -51,7 +51,7 @@ div.answers p { font-size: 1em; }
 
 .good-practices h3 { font-size: 1.6em; font-weight: bold; }
 
-.good-practices ul { font-size: 1em; }
+.good-practices ul, .good-practices ol { font-size: 1em; }
 
 .good-practices p a { color: #FFFFFF; text-decoration: underline; }
 
@@ -93,7 +93,7 @@ div.frequently-asked-questions h4 ~ p.is-visible { display: inherit; }
 
 #footer:after { content: ""; display: table; clear: both; }
 
-@media (min-width: 1077px) { div.answers { padding-left: 25%; padding-right: 25%; } div.effort { padding-left: 25%; padding-right: 25%; } div.frequently-asked-questions { padding-left: 25%; padding-right: 25%; } .good-practices h3 { width: 50%; } .good-practices h4 { padding-left: 12em; } .good-practices ul { padding-left: 13em; } .bad-practices h3 { width: 35%; } .bad-practices h4, .bad-practices p { padding-left: 12em; } }
+@media (min-width: 1077px) { div.answers { padding-left: 25%; padding-right: 25%; } div.effort { padding-left: 25%; padding-right: 25%; } div.frequently-asked-questions { padding-left: 25%; padding-right: 25%; } .good-practices h3 { width: 50%; } .good-practices h4 { padding-left: 12em; } .good-practices ul, .good-practices ol { padding-left: 13em; } .bad-practices h3 { width: 35%; } .bad-practices h4, .bad-practices p { padding-left: 12em; } }
 
 html { font: 16px/1.4 "Muli", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #342828; background-color: #FEECD3; }
 
